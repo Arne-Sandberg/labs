@@ -1,0 +1,31 @@
+{
+   "attribution" : {
+      "author" : "Unknown",
+      "license" : "Unknown"
+   },
+   "constructions" : {
+      "plastic A" : {}
+   },
+   "instances" : {
+      "instance1" : {
+         "construction" : "plastic A",
+         "object" : "single_mesh.stl",
+         "scale" : "mm",
+         "xform" : "transform1"
+      }
+   },
+   "namespace" : "http://spec.makerbot.com/ns/thing.0.1.1.1",
+   "objects" : {
+      "single_mesh.stl" : {}
+   },
+   "transformations" : {
+      "transform1" : {
+         "matrix" : [
+            [ 1.0, 0.0, 0.0, 0.0 ],
+            [ 0.0, 1.0, 0.0, 0.0 ],
+            [ 0.0, 0.0, 1.0, 0.0 ],
+            [ 0.0, 0.0, 0.0, 1.0 ]
+         ]
+      }
+   }
+}
