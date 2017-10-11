@@ -8,8 +8,8 @@ of the entire .makerbot file.
 Within the .makerbot file, the metainformation file should be called meta.json.
 A full example metafile may be found [here](example/meta.json).
  
-Keys at the root level are outputted from Miracle Grue, since they depend on 
-the behavior of the slice. The full Miracle Grue config is included under the 
+Keys at the root level are outputted from the slicer, since they depend on 
+the behavior of the slice. The full slicer config is included under the 
 root level key "miracle_config".
 
 The full machine config is included under the root level key "machine_config". 
@@ -26,15 +26,15 @@ comments are added to indicate the source of various metadata values
     {
         "thing_id", // from Prototype
         "uuid", // from prototype (unique identifier for this .makerbot file)
-        "toolhead_0_temperature": 230,  // miracle grue output
-        "toolhead_1_temperature": 230,  // miracle grue output
-        "total_commands": 44914,  // miracle grue output
-        "extrusion_distance_b_mm": 0.0,  // miracle grue output
-        "extrusion_mass_a_grams": 2.255707508943489,  // miracle grue output
-        "duration_s": 1151.261878252689,  // miracle grue output
-        "extrusion_mass_b_grams": 0.0,  // miracle grue output
-        "extrusion_distance_a_mm": 2255.707508943489, // miracle grue output
-        "printer_settings": { // print profile (miracle grue input)
+        "toolhead_0_temperature": 230,  // slicer output
+        "toolhead_1_temperature": 230,  // slicer output
+        "total_commands": 44914,  // slicer output
+        "extrusion_distance_b_mm": 0.0,  // slicer output
+        "extrusion_mass_a_grams": 2.255707508943489,  // slicer output
+        "duration_s": 1151.261878252689,  // slicer output
+        "extrusion_mass_b_grams": 0.0,  // slicer output
+        "extrusion_distance_a_mm": 2255.707508943489, // slicer output
+        "printer_settings": { // print profile (slicer input)
             "default_raft_extruder": 0,
             "slicer": "MIRACLEGRUE",
             "platform_temperature": 110,
@@ -69,15 +69,15 @@ comments are added to indicate the source of various metadata values
         "version" : "1.0.0",
         "thing_id" : 100, // from prototype
         "uuid" : "xxxxxxxxxxxxxxx", // from prototype (unique identifier for this .makerbot file)
-        "extruder_temperature": 215, //miracle grue output
-        "chamber_temperature": 30, // miracle grue output
-        "total_commands": 44914, //miracle grue output
-        "extrusion_distance_mm": 12315123, //miracle grue output
-        "extrusion_mass_g": 2131.04, //miracle grue output
-        "is_custom": False, //miracle grue output
-        "duration_s": 1231.2, //miracle grue output
+        "extruder_temperature": 215, //slicer output
+        "chamber_temperature": 30, // slicer output
+        "total_commands": 44914, //slicer output
+        "extrusion_distance_mm": 12315123, //slicer output
+        "extrusion_mass_g": 2131.04, //slicer output
+        "is_custom": False, //slicer output
+        "duration_s": 1231.2, //slicer output
         "material": "PLA",
-        "tool_type": "squid" or null //miracle grue output, null in a custom profile
+        "tool_type": "squid" or null //slicer output, null in a custom profile
         "bot_type": "replicator_5", // this should ALWAYS be there, and accurate, even for a custom profile
         "miracle_config": {
             "numberOfShells": 2,
@@ -131,27 +131,3 @@ comments are added to indicate the source of various metadata values
             ...
         ]
     }
-
-### Example metadata file: Version 3.0.0
-
-The biggest change in this version is a move to multi-extrusion by default. Any 
-key that has different values on a per-extruder basis must _always_ be a list, 
-with a number of entries equivalent to the number of extruders the machine 
-supports - _not_ the number of extruders used in a print. For instance, if a 
-machine has two extruders but the print uses only one, the `print_temperatures` 
-key must be a list of two entries (though one might be 0).
-
-Here is an example of keys that are different from version 2.0.0.
-
-The old keys should be kept for backwards compatibility; note that the new list 
-versions of the keys have plural names.
-
-	{
-		"version": "3.0.0",
-		"extruder_temperatures": [215, 0],
-		"extrusion_distances_mm": [122131, 0],
-		"extrusion_masses_g": [220, 0],
-		"materials": ["pla", "pla"],
-		"tool_types": ["mk13", "mk13"]
-		...
-	}

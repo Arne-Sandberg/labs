@@ -53,8 +53,7 @@ types in this form:
     <packet_type>(string): <packet_data>(json_serializable_data)
 
 There are currently two packet_types supported by this spec: "command" and 
-(as of v3.0) "comment".  Toolpath parsers are encouraged to ignore all other 
-packet types for future compatibility.
+(as of v3.0) "comment".
 
 #### Command Packet
 
@@ -78,23 +77,16 @@ dict will have a subdict as its value, where each key is in the form of a string
 and its value is some POD type.
 
 Metadata's value is also a dict.  Similar to parameters, values can only be 
-POD types.  Toolpath parsers should ignore any unknown metadata keys for future 
-compatibility.  Toolpath parsers are encouraged to treat a missing metadata key 
-the same as an empty metadata dict.
+POD types.
 
 Tags are used to keep track of the current type of move.  Since any specific 
-command packet can be part of several different categories 
-(i.e. outtermost shell + shell + floor), we are storing them as a list.  
-All elements of the list must be strings.  Toolpath parsers are encouraged to 
-treat a missing tags key the same as as empty tags list.
+command packet can be part of several different categories, we are storing them as a list.  
+All elements of the list must be strings.
 
 JT will have a small set of understood commands; since the printer will have its 
 own understanding of start/end routines, and JT is not intended to be a scripting 
 language, there is no reason to have many of the superfluous commands 
-(i.e. play_song, display_message, etc).  Toolpath parsers should ignore any 
-unknown commands for future compatibility.  Toolpath parsers are also encouraged 
-to accept integer values when a float is expected, but not a float when an integer 
-is expected.
+(i.e. play_song, display_message, etc).
 
 ##### move
 
