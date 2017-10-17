@@ -1,6 +1,6 @@
 # Notice
 
-MakerBot® Labs™ is an experimental platform for engineers and developers to create, build, customize, and collaborate on MakerBot 3D printing solutions. The documentation and materials included in within this repository are intended for use by advanced users only. For additional information, please visit MakerBot Labs (makerbot.com/labs). For support, please visit the MakerBot Labs Group on Thingiverse® (thingiverse.com/groups/makerbot-labs).
+MakerBot® Labs™ is an experimental platform for engineers and developers to create, build, customize, and collaborate on MakerBot 3D printing solutions. The documentation and materials included in within this repository are intended for use by advanced users only. For additional information, please visit [MakerBot Labs](http://makerbot.com/labs). For support, please visit the [MakerBot Labs Group on Thingiverse®](http://thingiverse.com/groups/makerbot-labs).
 
 # Legal Disclaimer
 
