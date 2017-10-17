@@ -1,7 +1,7 @@
 # MakerBot Labs
 
 Technical documentation and utilities for developers to extend the capabilities
-of MakerBot Desktop 3D Printers.
+of MakerBot 3D printing solutions.
 
 For more information, see the [MakerBot Labs](http://makerbot.com/labs) website.
 
