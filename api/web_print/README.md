@@ -24,5 +24,4 @@ View the [HTML](buttons/index.html) & [CSS](buttons/button.css).
 <img src="buttons/button-screenshot.png" width="415">
 
 ### Full Logo
-
-![MakerBot Logo](buttons/makerbot-logo.svg)
+<img src='buttons/makerbot-logo.svg' width="500">
